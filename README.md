@@ -1,3 +1,8 @@
+# The List of users
+
+Mini projecr built on React and MongoDB
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
