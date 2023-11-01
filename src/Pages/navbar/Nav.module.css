@@ -1,0 +1,33 @@
+.appNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0;
+  padding: 0;
+  background: #121212;
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
+.link {
+  display: flex;
+  margin: 0;
+  padding: 0 1rem;
+  gap: 1rem;
+
+}
+
+.navLink {
+  color: green;
+  text-decoration: none;  
+}
+
+.navLink:hover {
+  color: lightgreen;
+}
+
+.gifContainer {
+  padding: 0 1rem;
+  text-align: center;
+  cursor: pointer;
+}
