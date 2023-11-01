@@ -4,14 +4,14 @@ import { GET_LIST } from "../../graphql/query";
 import { CREATE_LIST_MUTATION } from "../../graphql/mutation";
 import {Button, CssBaseline, TextField, Box, Avatar, Typography, Container} from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import classes from "./Create.module.css";
+import styles from "./Create.module.css";
 
 export const CreateList = () => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
-  const [telephone, setTelephone] = useState(Number);
-  const [birthday, setBirthday] = useState(Number);
+  const [telephone, setTelephone] = useState("");
+  const [birthday, setBirthday] = useState("");
   const [createMutation] = useMutation(CREATE_LIST_MUTATION, {
     refetchQueries: [{ query: GET_LIST }],
   });
@@ -30,7 +30,7 @@ export const CreateList = () => {
   };
 
   return (
-    <div className={classes.CreatePage}>
+    <div className={styles.createPage}>
       <Container onSubmit={handleSubmit} component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -103,6 +103,7 @@ export const CreateList = () => {
               value={birthday}
               label="Birthday"
               name="birthday"
+              // type="dd-mm-yyyy"
               autoComplete="birthday"
               autoFocus
               onChange={(e) => setBirthday(e.target.value)}

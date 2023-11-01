@@ -5,8 +5,8 @@ export const CREATE_LIST_MUTATION = gql`
     $name: String
     $surname: String
     $email: String
-    $telephone: Number
-    $birthday: Number
+    $telephone: String
+    $birthday: String
   ) {
     create(
       name: $name
