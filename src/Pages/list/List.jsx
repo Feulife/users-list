@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_LIST } from "../../graphql/query";
+import { User } from "../user/User";
 import styles from "./List.module.css"
 
 
@@ -14,11 +15,11 @@ export const List = () => {
         <div className={styles.list}>
           {loading && <>Loading...</>}
           {error && <h3>Error!</h3>}
-          {/* {!loading &&
+          {!loading &&
             !error &&
-            data?.list.map((user) => 
-               key={user.id} list={user}
-            )} */}
+            data?.list.map((user) => (
+              <User key={user.id} list={user} />
+            ))}
         </div>
       </div>
     </>

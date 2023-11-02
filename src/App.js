@@ -9,7 +9,7 @@ import './App.css';
 
 const App = () => {
   const client = new ApolloClient({
-    uri: 'http://localhost:3000',
+    uri: 'http://localhost:4444',
     cache: new InMemoryCache(),
   })
   const theme = createTheme({
@@ -27,7 +27,6 @@ const App = () => {
               <Navbar />
               <Container maxWidth="lg">
                 <Routes>
-                  {/* <Route path="/" element={<Main />} /> */}
                   <Route path="/list" element={<List />} />
                   <Route path="/create" element={<CreateList />} />
                 </Routes>
