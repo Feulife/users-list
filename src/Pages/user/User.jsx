@@ -8,7 +8,7 @@ import {
 import { GET_LIST } from "../../graphql/query";
 import style from "./User.modal.css";
 
-export const User = ({ list }) => {
+export const User = ({ user  }) => {
   const [deleteListMutation] = useMutation(DELETE_LIST_MUTATION, {
     refetchQueries: [{ query: GET_LIST }],
   });
@@ -16,17 +16,17 @@ export const User = ({ list }) => {
   const deleteList = () => {
     deleteListMutation({
       variables: {
-        id: list.id,
+        id: user.id,
       },
     })
   };
 
   const [isEditing, setIsEditing] = useState(false);
-  const [name, setName] = useState(list.name);
-  const [surname, setSurname] = useState(list.surname);
-  const [email, setEmail] = useState(list.email);
-  const [telephone, setTelephone] = useState(list.telephone);
-  const [birthday, setBirthday] = useState(list.birthday);
+  const [name, setName] = useState(user.name);
+  const [surname, setSurname] = useState(user.surname);
+  const [email, setEmail] = useState(user.email);
+  const [telephone, setTelephone] = useState(user.telephone);
+  const [birthday, setBirthday] = useState(user.birthday);
   const [editListMutation] = useMutation(EDIT_LIST_MUTATION, {
     refetchQueries: [{ query: GET_LIST }],
   });
@@ -35,7 +35,7 @@ export const User = ({ list }) => {
   const saveChanges = () => {
     editListMutation({
       variables: {
-        id: list.id,
+        id: user.id,
         name: name,
         surname: surname,
         email: email,
@@ -48,11 +48,11 @@ export const User = ({ list }) => {
 
   const discardChanges = () => {
     setIsEditing(false)
-    setName(list.name)
-    setSurname(list.surname)
-    setEmail(list.email)
-    setTelephone(list.telephone)
-    setBirthday(list.birthday)
+    setName(user.name)
+    setSurname(user.surname)
+    setEmail(user.email)
+    setTelephone(user.telephone)
+    setBirthday(user.birthday)
   };
 
   const rootClasses = [style.modal];
@@ -79,7 +79,7 @@ export const User = ({ list }) => {
         >
           <div className="thumb_container" onClick={(e) => e.stopPropagation()}>
             <div>
-              <h3 className="titleinfo">{list.name}</h3>
+              <h3 className="titleinfo">{user.name}</h3>
               {isEditing ? (
                 <input
                 class="form-outline w-100"
@@ -101,7 +101,7 @@ export const User = ({ list }) => {
               ) : (
                 <div className="desc">
                   <p>
-                    {list.surname}
+                    {user.surname}
                   </p>
                 </div>
               )}
@@ -116,7 +116,7 @@ export const User = ({ list }) => {
               ) : (
                 <div className="desc">
                   <p>
-                    <b>{list.email}</b>
+                    <b>{user.email}</b>
                   </p>
                 </div>
 
@@ -132,7 +132,7 @@ export const User = ({ list }) => {
               ) : (
                 <div className="desc">
                   <p>
-                    <b>{list.telephone}</b>
+                    <b>{user.telephone}</b>
                   </p>
                 </div>
 
@@ -148,7 +148,7 @@ export const User = ({ list }) => {
               ) : (
                 <div className="desc">
                   <p>
-                    <b>{list.birthday}</b>
+                    <b>{user.birthday}</b>
                   </p>
                 </div>
 

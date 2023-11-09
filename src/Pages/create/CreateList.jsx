@@ -82,7 +82,6 @@ export const CreateList = () => {
               label="Email"
               name="email"
               autoComplete="email"
-              autoFocus
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
@@ -93,7 +92,6 @@ export const CreateList = () => {
               label="Telephone"
               name="telephone"
               autoComplete="telephone"
-              autoFocus
               onChange={(e) => setTelephone(e.target.value)}
             />
             <TextField
@@ -103,9 +101,7 @@ export const CreateList = () => {
               value={birthday}
               label="Birthday"
               name="birthday"
-              // type="dd-mm-yyyy"
               autoComplete="birthday"
-              autoFocus
               onChange={(e) => setBirthday(e.target.value)}
             />
             <Button
