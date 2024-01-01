@@ -1,6 +1,8 @@
 import { useQuery } from "@apollo/client";
 import { GET_LIST } from "../../graphql/query";
-import Users from "../user/users";
+// import Users from "../user/users";
+import { User } from "../user/User";
+
 import { Button } from "@mui/material";
 import styles from "./List.module.css"
 
@@ -17,9 +19,18 @@ export const List = () => {
           {console.log(data)}
           {loading && <>Loading...</>}
           {error && <h3>Error!</h3>}
-          <Users usersOfList={data.users.lists} />
+          {/* <Users usersOfList={data.users.lists} /> */}
+
+          {/* <Users usersOfList={data.lists} /> */}
           
-            {data.users.hasNextPage && (
+          
+          {!loading &&
+          !error &&
+          data?.lists.map((user) => 
+          <User key={user.id} user={user} />
+          )}
+          
+            {/* {data.users.hasNextPage && (
               <Button
                 onClick={() =>
                   fetchMore({
@@ -42,7 +53,7 @@ export const List = () => {
                   })}>
                     Load more
               </Button>
-            )}
+            )} */}
         </div>
       </div>
     </>

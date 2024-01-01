@@ -77,11 +77,11 @@ export const User = ({ user  }) => {
           className={rootClasses.join(" ")}
           onClick={() => setVisible(false)}
         >
-          <div className="thumb_container" onClick={(e) => e.stopPropagation()}>
+          <div className="thumb_container card" onClick={(e) => e.stopPropagation()}>
             <div>
-              <h3 className="titleinfo">{user.name}</h3>
+              <h3 className="titleinfo">{user.name} {user.surname}</h3>
               {isEditing ? (
-                <input
+                <input className="editField"
                 class="form-outline w-100"
                   type="text"
                   value={name}
@@ -92,7 +92,7 @@ export const User = ({ user  }) => {
                 <></>
               )}
               {isEditing ? (
-                <input
+                <input className="editField"
                   type="text"
                   class="form-outline w-100"
                   value={surname}
@@ -100,13 +100,11 @@ export const User = ({ user  }) => {
                 />
               ) : (
                 <div className="desc">
-                  <p>
-                    {user.surname}
-                  </p>
+                  <p></p>
                 </div>
               )}
               {isEditing ? (
-                <input
+                <input className="editField"
                 class="form-outline w-100"
                   type="text"
                   value={email}
@@ -116,13 +114,13 @@ export const User = ({ user  }) => {
               ) : (
                 <div className="desc">
                   <p>
-                    <b>{user.email}</b>
+                    <b>Email: {user.email}</b>
                   </p>
                 </div>
 
               )}
               {isEditing ? (
-                <input
+                <input className="editField"
                 class="form-outline w-100"
                   type="text"
                   value={telephone}
@@ -132,13 +130,13 @@ export const User = ({ user  }) => {
               ) : (
                 <div className="desc">
                   <p>
-                    <b>{user.telephone}</b>
+                    <b>Telephone: {user.telephone}</b>
                   </p>
                 </div>
 
               )}
               {isEditing ? (
-                <input
+                <input className="editField"
                 class="form-outline w-100"
                   type="text"
                   value={birthday}
@@ -148,7 +146,7 @@ export const User = ({ user  }) => {
               ) : (
                 <div className="desc">
                   <p>
-                    <b>{user.birthday}</b>
+                    <b>Birthday: {user.birthday}</b>
                   </p>
                 </div>
 
@@ -157,24 +155,25 @@ export const User = ({ user  }) => {
               {isEditing ? (
                 <>
                   <button
-                    className="btn btn-success mr-2"
+                    className="btnSave"
                     onClick={saveChanges}
                   >
                     Save
                   </button>
-                  <button className="btn btn-danger" onClick={discardChanges}>
+                  <button className="btnCancel"
+                  onClick={discardChanges}>
                     Cancel
                   </button>
                 </>
               ) : (
                 <>
                   <button
-                    className="btn btn-info mr-2"
+                    className="btnEdit"
                     onClick={() => setIsEditing(true)}
                   >
                     Edit
                   </button>
-                  <button className="btn btn-danger" onClick={deleteList}>
+                  <button className="btnDelete" onClick={deleteList}>
                     Delete
                   </button>
                 </>

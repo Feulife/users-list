@@ -33,6 +33,7 @@ export const DELETE_LIST_MUTATION = gql`
 
 export const EDIT_LIST_MUTATION = gql`
   mutation Mutation(
+    $id: ID
     $name: String
     $surname: String
     $email: String

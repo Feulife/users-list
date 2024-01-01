@@ -7,10 +7,46 @@
   background-color: #282c34;
   min-height: 100vh;
   /* justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
 }
 
+.thumb_container {
+  color: #837A93;
+
+  max-width: 750px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.card {
+  padding: 20px 30px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  background: #1E252B;
+}
+
+.editField {
+  background-color: #a8b2d1;
+}
+
+.btnEdit {
+  background-color: #5b5b5c;
+  color: #e6f1ff;
+}
+
+.btnDelete {
+  background-color: #5b5b5c;
+  color: #e2061c;
+}
+
+.btnSave {
+  background-color: #088826;
+}
+
+.btnCancel {
+  background-color: #dee206;
+}
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
